@@ -46,7 +46,6 @@ def time_call(log=None):
     return decorator
 
 
-#LRU cache decorator taken from ActiveState.  
 _CacheInfo = namedtuple("CacheInfo", ["hits", "misses", "maxsize", "currsize"])
 
 class _HashedSeq(list):
@@ -247,7 +246,7 @@ if __name__ == '__main__':
     func_to_time('second', 3)
     threading.Thread(target=thread1_func).start()
     threading.Thread(target=thread2_func).start()
-    for i in range(100):
-        func_to_cache(random.randint(0,9))
-        if i % 10 == 0:
-            print "cache info:%s" % pprint.pformat(func_to_cache.cache_info())
+#   for i in range(100):
+#       func_to_cache(random.randint(0,9))
+#       if i % 10 == 0:
+#           print "cache info:%s" % pprint.pformat(func_to_cache.cache_info())
